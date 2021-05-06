@@ -27,7 +27,7 @@ class IosTestModeSettings implements JsonEncodable {
   ///
   /// - Returns: Instance of `IosTestModeSettings`.
   IosTestModeSettings(
-      {@required this.charge,
+      {required this.charge,
       this.cardsCount = 1,
       this.enablePaymentError = false,
       this.paymentAuthorizationPassed: true});

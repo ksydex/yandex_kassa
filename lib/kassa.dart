@@ -7,13 +7,13 @@ import 'package:yandex_kassa/yandex_kassa.dart';
 class YandexKassa {
   static const MethodChannel _channel = const MethodChannel('yandex_kassa');
 
-  static Future<TokenizationResult> startCheckout(
+  static Future<TokenizationResult?> startCheckout(
           PaymentParameters paymentParameters) async =>
       TokenizationResult.fromJson(
           await _channel.invokeMapMethod<String, dynamic>(
               'startCheckout', paymentParameters.json));
 
-  static Future<TokenizationResult> startCheckoutWithCvcRepeatRequest(
+  static Future<TokenizationResult?> startCheckoutWithCvcRepeatRequest(
           PaymentParameters paymentParameters, String paymentId) async =>
       TokenizationResult.fromJson(
           await _channel.invokeMapMethod<String, dynamic>(

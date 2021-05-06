@@ -85,11 +85,11 @@ class IosColorScheme extends AndroidColorScheme implements JsonEncodable {
   static IosColorScheme inverse30 = IosColorScheme(white: 255, alpha: 77);
   static IosColorScheme link = IosColorScheme(red: 0, green: 108, blue: 244);
 
-  final int red;
-  final int green;
-  final int blue;
-  final int white;
-  final int alpha;
+  final int? red;
+  final int? green;
+  final int? blue;
+  final int? white;
+  final int? alpha;
   IosColorScheme(
       {this.red = 0,
       this.green = 0,
@@ -99,7 +99,6 @@ class IosColorScheme extends AndroidColorScheme implements JsonEncodable {
       : super(red: red, green: green, blue: blue);
 
   factory IosColorScheme.fromJson(Map json) {
-    if (json == null) return null;
     return IosColorScheme(
         red: json['red'],
         green: json['green'],
@@ -109,7 +108,7 @@ class IosColorScheme extends AndroidColorScheme implements JsonEncodable {
   }
 
   @override
-  Map<String, int> get json => {
+  Map<String, int?> get json => {
         'red': red,
         'green': green,
         'blue': blue,
